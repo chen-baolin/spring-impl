@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example.springframework</groupId>
-  <artifactId>spring-impl-step-11</artifactId>
+  <artifactId>spring-impl-step-12</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>spring-impl-step-11</name>
+  <name>spring-impl-step-12</name>
   <url>http://maven.apache.org</url>
 
   <properties>
