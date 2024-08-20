@@ -1,4 +1,6 @@
-package org.example.springframework.beans;
+package org.example.springframework.beans.factory;
+
+import org.example.springframework.beans.BeansException;
 
 public interface DisposableBean {
 
