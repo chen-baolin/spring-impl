@@ -5,28 +5,14 @@
 	         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="husband" class="org.example.springframework.test.bean.Husband">
-        <property name="wife" ref="wife"/>
+        <property name="wifiName" value="你猜"/>
+        <property name="marriageDate" value="2021-08-08"/>
     </bean>
 
-    <bean id="wife" class="org.example.springframework.test.bean.Wife">
-        <property name="husband" ref="husband"/>
-        <property name="mother" ref="husbandMother"/>
+    <bean id="conversionService" class="org.example.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters" ref="converters"/>
     </bean>
 
-    <bean id="husbandMother" class="org.example.springframework.test.bean.HusbandMother"/>
-
-    <!-- AOP 配置，验证三级缓存 -->
-    <bean class="org.example.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
-
-    <bean id="beforeAdvice" class="org.example.springframework.test.bean.SpouseAdvice"/>
-
-    <bean id="methodInterceptor" class="org.example.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor">
-        <property name="advice" ref="beforeAdvice"/>
-    </bean>
-
-    <bean id="pointcutAdvisor" class="org.example.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
-        <property name="expression" value="execution(* org.example.springframework.test.bean.Wife.*(..))"/>
-        <property name="advice" ref="methodInterceptor"/>
-    </bean>
+    <bean id="converters" class="org.example.springframework.test.converter.ConvertersFactoryBean"/>
 
 </beans>
